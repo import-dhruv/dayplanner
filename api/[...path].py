@@ -1,7 +1,6 @@
-"""Vercel Function entrypoint for the FastAPI backend.
+"""Catch-all Vercel Function entrypoint for the FastAPI backend.
 
-Vercel serves this at /api/* in the same project as the Next.js frontend,
-so the browser talks to a single origin and no CORS proxy is needed.
+Serves every /api/* request in the same project as the Next.js frontend.
 """
 
 import os
