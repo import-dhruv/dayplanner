@@ -2,6 +2,8 @@
 
 A personal day planner and productivity command center. Next.js + TypeScript + Tailwind on the front, FastAPI + SQLAlchemy + PostgreSQL on the back.
 
+**Live:** https://dayplanner-opal.vercel.app — demo login: `dhruv@planner.local` / `password123`
+
 ## Features
 
 - **My Day** — greeting, live clock, daily overview, three selectable priorities, grouped task list (Morning / Afternoon / Evening / Anytime) with drag-to-reorder and reschedule, interactive timeline with a live current-time marker, unscheduled task tray, and an evening review.
@@ -54,6 +56,15 @@ docker compose up --build
 ```
 
 App: http://localhost:3000 · API: http://localhost:8765
+
+### Vercel
+
+The production deployment uses a single Vercel project with two **Services**:
+
+- `frontend` (root `.`) — Next.js
+- `backend` (root `backend/`) — FastAPI, entrypoint `app.main:app`
+
+`vercel.json` rewrites `/api/*` to the backend service, so the browser only talks to one origin. The database is a Neon Postgres instance provisioned through the Vercel Marketplace and injected as `DATABASE_URL`; `SECRET_KEY` is stored as a Vercel environment variable. Every push to `main` deploys automatically.
 
 ## First launch
 
