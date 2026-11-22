@@ -1,0 +1,31 @@
+# dependencies
+node_modules/
+backend/.venv/
+venv/
+
+# build output
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# local data / runtime
+pgdata/
+pgrun/
+*.log
+.env
+.env.local
+.env.*.local
+
+# python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# editor / os
+.DS_Store
+.idea/
+.vscode/
+
+# vercel
+.vercel/
